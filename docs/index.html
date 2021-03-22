@@ -73,9 +73,22 @@
         <div class="welcometohomepage">
         <center><i>Welcome to the homepage of the Chris mad sussy website</i></center>
         </div>
-        <embed src="/audio/russian_song.mp3" loop="true" autostart="true" width="2" height="0">
+        <audio id="russian_song" src="https://github.com/sebtheman/chris-is-mad-sussy/raw/master/docs/audio/russian_song.mp3">
         <script>
             includeHTML();
+        </script>
+        <script>
+          function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
+        </script>
+        <script>
+          window.onload = async function() {
+            console.log('Taking a break...');
+            await sleep(2000);
+            console.log('Two seconds later, showing sleep in a loop...');
+            document.getElementById("russian_song").play();
+          }
         </script>
     </body>
 </html>
