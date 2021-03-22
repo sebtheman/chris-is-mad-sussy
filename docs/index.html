@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <audio id="russian_song" src="https://github.com/sebtheman/chris-is-mad-sussy/raw/master/docs/audio/russian_song.mp3"></audio>
+      <script>
+        async function play_russian_music(){
+          var audio = document.getElementById("russian_song");
+          audio.currentTime = 0;
+          document.getElementById("russian_song").play();
+        }
+      </script>
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWM9BCD474"></script>
       <script>
@@ -66,29 +74,31 @@
               color: white;
               background-color: black;
             }
+            #russian_song_button {
+              color:white;
+              background-color:purple;
+              font-size:20pt;
+              border-style: solid;
+              border-color: white;
+              border-width: 5px;
+              border-radius: 10px 10px 10px 10px;
+              font-weight: bolder;
+            }
+            #russian_song_button:hover {
+              color: black;
+              background-color: white;
+              border-color: aqua;
+            }
         </style>
     </header>
     <body>
         <div w3-include-html="https://sebtheman.github.io/responsivetopnavbar.html"></div>
         <div class="welcometohomepage">
-        <center><i>Welcome to the homepage of the Chris mad sussy website</i></center>
+          <center><i>Welcome to the homepage of the Chris mad sussy website</i></center>
         </div>
-        <audio id="russian_song" src="https://github.com/sebtheman/chris-is-mad-sussy/raw/master/docs/audio/russian_song.mp3">
+        <button id="russian_song_button" onclick="play_russian_music();">Press me!</button>
         <script>
             includeHTML();
-        </script>
-        <script>
-          function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-          }
-        </script>
-        <script>
-          window.onload = async function() {
-            console.log('Taking a break...');
-            await sleep(2000);
-            console.log('Two seconds later, showing sleep in a loop...');
-            document.getElementById("russian_song").play();
-          }
         </script>
     </body>
 </html>
